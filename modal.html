@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Modla example</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta>
+	<style>
+		#myModal{
+			transition: 1.3s linear;
+			left: 0;
+			top: 0;
+			display: none;
+			position: fixed;
+			z-index: 1;
+			height: 100%;
+			width: 100%;
+			background-color:rgba(33, 33, 33,.9);
+		}	
+		
+		span.close{
+			font-weight: bold;
+			font-size: 30px;
+			color: red;
+			float: right;
+		}
+		.modalBody{
+			transition: 1.3s all linear;
+			display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    margin-top:10%;
+		    color:red;
+		}
+		button{
+			height: 50px;
+			width: 100px;
+			background-color: #e67e22;
+			border: none;
+			transition: 0.3s cubic-bezier(.12,.99,.86,.01);
+			
+		}
+		button:hover{
+			box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+		}
+		input{height: 30px;}
+	</style>
+</head>
+<body>
+<a href="#" id="myImg">open Modal</a>
+<div id="myModal" class="myModal">
+	<span class="close">x</span>
+	<div class="modalBody">
+		<form>
+			<label>User Name</label><br/>
+			<input type="text" name="name" required="required" autocomplete="false">
+			<button type="submit">Submit</button>
+		</form>
+	</div>	
+</div>
+<script type="text/javascript">
+	var modal = document.getElementById('myModal');
+	var img   = document.getElementById('myImg');
+	img.onclick = function(){
+		modal.style.display = "block";
+		modalImg.src = this.src;
+		capContent.innerHTML = this.alt;
+	}
+	var span = document.getElementsByClassName('close')[0];
+	span.onclick = function(){modal.style.display = "none";}
+</script>
+</body>
+</html>
